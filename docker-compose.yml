@@ -1,0 +1,20 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+  app:
+    build: .
+    container_name: rails-challenge
+    volumes:
+      - .:/rails-challenge:cached
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    tty: true
+    stdin_open: true
+    command: tail -f /dev/null
