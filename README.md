@@ -17,10 +17,13 @@ Creates the database and runs the migrations:
 
 `docker exec rails-challenge sh ./init.sh`
 
-
-Access the container via bash session:
+Access the container via bash session and run the tests:
 
 `docker exec -ti rails-challenge bash`
+
+inside container run:
+
+`rspec`
 
 ## Generate Shortened URLs:
 
