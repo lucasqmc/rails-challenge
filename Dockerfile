@@ -43,4 +43,3 @@ ENV RAILS_ENV development
 
 ENTRYPOINT ["sh", "./entrypoint.sh"]
 
-CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
